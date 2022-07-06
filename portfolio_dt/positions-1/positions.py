@@ -17,6 +17,7 @@ class position(security):
         # if update of position value results to short
             # throw error
         #TODO: throw error
+        raise Exception
     # add to existing position
     def addPosition(self,positionToAdd):
         self.value += positionToAdd
