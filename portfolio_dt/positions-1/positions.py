@@ -1,7 +1,9 @@
+#TODO: Make sure you change the import directory
 from securities import security
 
 class position(security):
-    def __init__(self, value, secured):
+    def __init__(self, name, value, secured):
+        self.name = name
         self.value = value
         self.secured = secured
     # get the security object
@@ -14,11 +16,7 @@ class position(security):
     def updatePosition(self,newPosition):
         # if update of position value results to short
             # throw error
-        try:
-            self.value = newPosition
-        except positionShort as error:
-            print("New Position causes a short")
-        self.value = newPosition
+        #TODO: throw error
     # add to existing position
     def addPosition(self,positionToAdd):
         self.value += positionToAdd
