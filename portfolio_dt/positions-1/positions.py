@@ -11,13 +11,12 @@ if module_path not in sys.path:
 from interfaces.positionInterface import positionInterface
 
 class position(positionInterface):
-    def __init__(self, name, value, secured):
-        self.name = name
+    def __init__(self, security, value):
         self.value = value
-        self.secured = secured
+        self.security = security
     # get the security object
     def getSecurity(self):
-        return secured
+        return self.security
     # get current position value
     def getPosition(self):
         return self.value
