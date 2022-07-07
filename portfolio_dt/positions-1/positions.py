@@ -7,13 +7,18 @@ module_path = os.path.abspath(os.path.join('..'))
 if module_path not in sys.path:
     sys.path.append(module_path)
 
-
+from implementations.securitySolution import security
+from interfaces.securityInterface import securityInterface
 from interfaces.positionInterface import positionInterface
 
 class position(positionInterface):
-    def __init__(self, security, value):
+    def __init__(self, secure: security, value: int):
+        if type(secure) == str:
+            self.security = security(secure)
+        else:
+            self.security = secure
         self.value = value
-        self.security = security
+        
     # get the security object
     def getSecurity(self):
         return self.security
@@ -33,5 +38,7 @@ class position(positionInterface):
     def addPosition(self,positionToAdd):
         self.value += positionToAdd
     # set the position value
+    def setPosition(self,positionToSet):
+        self.value = positionToSet
     def setPosition(self,positionToSet):
         self.value = positionToSet
