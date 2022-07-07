@@ -8,7 +8,7 @@ if module_path not in sys.path:
     sys.path.append(module_path)
 
 
-from interface.positionInterface import positionInterface
+from interfaces.positionInterface import positionInterface
 
 class position(positionInterface):
     def __init__(self, name, value, secured):
